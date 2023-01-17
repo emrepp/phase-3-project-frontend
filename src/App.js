@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
   return (
-    <h1> React Todo App </h1>
+    <h1> Todo App </h1>
    
   );
 }
