@@ -1,10 +1,14 @@
-
+import "./App.css";
 
 function App() {
   return (
-    <h1> Todo App </h1>
+    <div className="App">
+      <h1> Todo App </h1>
+
+    </div>
+    
    
   );
-}
+};
 
 export default App;
