@@ -35,6 +35,23 @@ function App() {
  return (
   <Container>
       <div>
+      <h2>Todo List</h2>
+          <Text value={input} />
+          <Button>Add</Button>
+        <Tasks>
+          <TaskCount>
+            <b>Pending Tasks</b> 
+          </TaskCount>
+          <TaskCount>
+            <b>Completed Tasks</b>
+          </TaskCount>
+        </Tasks>
+        <div>
+          <ul>
+              /* List items consisting of tasks will be listed here */
+          </ul>
+        </div>
+        <Button>Clear</Button>
        
       </div>
     </Container>
