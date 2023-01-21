@@ -36,6 +36,19 @@ function App() {
 const [todoList, setTodoList] = useState([]);
 const [completedTaskCount, setCompletedTaskCount] = useState(0);
 
+const handleClick = () => {
+  const id = todoList.length + 1;
+  setTodoList((prev) => [
+    ...prev,
+    {
+      id: id,
+      task: input,
+      complete: false,
+    },
+  ]);
+  setInput("");
+};
+
 
  return (
   <Container>
