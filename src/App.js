@@ -1,6 +1,6 @@
 import "./App.css"
 import styled from "styled-components";
-//import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -32,12 +32,17 @@ const TaskCount = styled.span`
 const Tasks = styled.div`
 `;
 function App() {
+  const [input, setInput] = useState("");
+const [todoList, setTodoList] = useState([]);
+const [completedTaskCount, setCompletedTaskCount] = useState(0);
+
+
  return (
   <Container>
       <div>
       <h2>Todo List</h2>
-          <Text value={input} />
-          <Button>Add</Button>
+          <Text value={input} onInput={(e) =>setInput(e.target.value)} />
+          <Button onClick={() => handleClick()}>Add</Button>
         <Tasks>
           <TaskCount>
             <b>Pending Tasks</b> 
