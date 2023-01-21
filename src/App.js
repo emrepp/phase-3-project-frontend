@@ -66,7 +66,21 @@ const handleClick = () => {
         </Tasks>
         <div>
           <ul>
-              /* List items consisting of tasks will be listed here */
+          {todoList.map((todo) => {
+    return (
+      <LIST
+        complete={todo.complete}
+        id={todo.id}
+        onClick={() => handleComplete(todo.id)}
+        style={{
+          listStyle: "none",
+          textDecoration: todo.complete && "line-through",
+        }}
+      >
+        {todo.task}
+      </LIST>
+    );
+  })}
           </ul>
         </div>
         <Button>Clear</Button>
