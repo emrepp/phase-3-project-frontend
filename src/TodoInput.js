@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 
-const TodoInput = ({ onAddTodo}) => {
-    const [todo, setTodo] = useState("");
+function TodoInput({todo, setTodo}){
+    
    
     
 
@@ -13,7 +13,7 @@ const TodoInput = ({ onAddTodo}) => {
         }, 
         body:JSON.stringify({
             item: todo,
-            importance: importance,
+            
         
         }),
 
