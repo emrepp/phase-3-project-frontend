@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import "./index.css";
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -99,6 +100,7 @@ return (
               );
             })}
           </ul>
+          <Button onClick={() => handleClick()}>Clear</Button>
         </div>
       </div>
     </Container>
