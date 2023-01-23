@@ -20,6 +20,38 @@ function App {
       .then((data) => setProjects(data))
   }
 
+  const patchProjects = (project) => {
+    fetch(`/api/projects/${project.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify({
+        favorite: project.favorite,
+        title: project.title,
+        color: project.color,
+      }),
+    })
+  }
+  const postProjects = (project) => {
+    fetch('/api/projects/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify(project),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects((prevProjects) => {
+          return [...prevProjects, data]
+        })
+      })
+  }
+  
+
 
     return (
       <div id="app">
