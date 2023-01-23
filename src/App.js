@@ -1,26 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
 
 
 function App {
+
+  const [projects, setProjects] = React.useState([])
+
+  React.useEffect(() => {
+    fetchProjects()
+  }, [])
+
+  const fetchProjects = () => {
+    fetch('/api/projects')
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+  }
+
+
     return (
       <div id="app">
-        {this.props.children}
+        
       </div>
     )
   }
 
-ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
-      <Route path="signup" component={Signup}/>
-      <Route path="login" component={Login}/>
-      <Route path="lists" component={Lists}>
-      </Route>
-    </Route>
-  </Router>
-), document.getElementById('main'));
 
 export default App;
